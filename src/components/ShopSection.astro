@@ -1,0 +1,483 @@
+---
+// ShopSection.astro - Sección completa de tienda
+import ProductCard from './ProductCard.astro';
+
+// Número de WhatsApp del negocio (formato internacional sin +)
+const WHATSAPP_NUMBER = "50212345678"; // Cambia esto por tu número real
+
+// Datos de productos (en el futuro esto puede venir de una base de datos o CMS)
+const products = [
+  {
+    id: "amaranto-grano-natural",
+    name: "Amaranto en Grano Natural",
+    description: "Granos de amaranto 100% natural, cosechado directamente de los campos de Sololá. Perfecto para preparar atoles, agregar a ensaladas o hacer reventado.",
+    price: 35.00,
+    image: "/images/products/amaranto-grano.jpg",
+    weight: "500g",
+    badge: "Más Vendido",
+    whatsappNumber: WHATSAPP_NUMBER
+  },
+  {
+    id: "harina-amaranto",
+    name: "Harina de Amaranto Premium",
+    description: "Harina de amaranto finamente molida, ideal para panadería sin gluten, tortillas nutritivas y smoothies proteicos. Rica en calcio y hierro.",
+    price: 45.00,
+    image: "/images/products/harina-amaranto.jpg",
+    weight: "500g",
+    discount: 10,
+    whatsappNumber: WHATSAPP_NUMBER
+  },
+  {
+    id: "amaranto-reventado",
+    name: "Amaranto Reventado Artesanal",
+    description: "Amaranto reventado listo para consumir. Excelente para mezclar con miel, chocolate o yogurt. Snack saludable rico en proteínas.",
+    price: 40.00,
+    image: "/images/products/amaranto-reventado.jpg",
+    weight: "300g",
+    badge: "Nuevo",
+    whatsappNumber: WHATSAPP_NUMBER
+  }
+];
+---
+
+<section id="tienda" class="shop-section">
+  <div class="container">
+    <!-- Header de la sección -->
+    <div class="section-header">
+      <span class="section-subtitle">Productos Selectos</span>
+      <h2 class="section-title">Nuestra Tienda de Amaranto</h2>
+      <p class="section-description">
+        Descubre nuestra selección de productos de amaranto de la más alta calidad, 
+        cultivados con amor en las tierras fértiles de Sololá, Guatemala.
+      </p>
+    </div>
+    
+    <!-- Filtros y búsqueda -->
+    <div class="shop-controls">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">
+          Todos los Productos
+        </button>
+        <button class="filter-btn" data-filter="grano">
+          Granos
+        </button>
+        <button class="filter-btn" data-filter="harina">
+          Harinas
+        </button>
+        <button class="filter-btn" data-filter="procesado">
+          Procesados
+        </button>
+      </div>
+      
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input 
+          type="search" 
+          placeholder="Buscar productos..." 
+          class="search-input"
+          aria-label="Buscar productos"
+        />
+      </div>
+    </div>
+    
+    <!-- Grid de productos -->
+    <div class="products-grid">
+      {products.map(product => (
+        <ProductCard {...product} />
+      ))}
+    </div>
+    
+    <!-- Call to action adicional -->
+    <div class="shop-cta">
+      <div class="cta-content">
+        <h3 class="cta-title">¿Necesitas una cantidad mayor?</h3>
+        <p class="cta-text">
+          Ofrecemos precios especiales para compras al por mayor y entregas a todo Guatemala.
+        </p>
+        <a 
+          href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola! Me interesa información sobre compras al por mayor.')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-button"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          Contactar por WhatsApp
+        </a>
+      </div>
+      
+      <div class="cta-features">
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Envíos a toda Guatemala</span>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>100% Natural y Orgánico</span>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+          <span>Pago contra entrega</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .shop-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+  }
+  
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+  }
+  
+  .section-subtitle {
+    display: inline-block;
+    background: linear-gradient(135deg, #2d5016, #8b5a3c);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.7;
+  }
+  
+  .shop-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    color: #666;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn:hover {
+    border-color: #2d5016;
+    color: #2d5016;
+  }
+  
+  .filter-btn.active {
+    background: linear-gradient(135deg, #2d5016, #8b5a3c);
+    color: white;
+    border-color: transparent;
+  }
+  
+  .search-box {
+    position: relative;
+    min-width: 280px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    stroke: #999;
+    stroke-width: 2;
+    pointer-events: none;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #2d5016;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .shop-cta {
+    background: linear-gradient(135deg, #2d5016, #1a3510);
+    border-radius: 30px;
+    padding: 3rem;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shop-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  
+  .cta-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .cta-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  
+  .cta-text {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+  }
+  
+  .cta-button svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .cta-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .feature-item svg {
+    width: 24px;
+    height: 24px;
+    stroke: #ffd700;
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+  
+  .feature-item span {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 1024px) {
+    .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .shop-section {
+      padding: 60px 0;
+    }
+    
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+    
+    .shop-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .filter-buttons {
+      justify-content: center;
+    }
+    
+    .search-box {
+      min-width: auto;
+      width: 100%;
+    }
+    
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .shop-cta {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    
+    .cta-title {
+      font-size: 1.5rem;
+    }
+    
+    .cta-text {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .filter-btn {
+      font-size: 0.85rem;
+      padding: 8px 16px;
+    }
+    
+    .shop-cta {
+      padding: 1.5rem;
+    }
+    
+    .cta-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  // Funcionalidad de filtros
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.querySelector('.search-input') as HTMLInputElement;
+    
+    // Filtrado por categoría
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remover clase active de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Agregar clase active al botón clickeado
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        console.log('Filtro seleccionado:', filter);
+        
+        // Aquí puedes implementar la lógica de filtrado
+        // Por ahora solo muestra todos los productos
+      });
+    });
+    
+    // Búsqueda en tiempo real
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        console.log('Buscando:', searchTerm);
+        
+        // Aquí puedes implementar la lógica de búsqueda
+        // Filtrar productos basados en el término de búsqueda
+      });
+    }
+    
+    // Animación de aparición de productos
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const element = entry.target as HTMLElement;
+          setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observar tarjetas de productos
+    document.querySelectorAll('.product-card').forEach((card, index) => {
+      const element = card as HTMLElement;
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      element.style.transition = 'all 0.5s ease';
+      observer.observe(card);
+    });
+  });
+</script>

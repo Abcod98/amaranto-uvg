@@ -1,0 +1,149 @@
+---
+// SEO.astro - Componente para optimización SEO
+export interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalURL?: string;
+  noindex?: boolean;
+  structuredData?: object;
+}
+
+const {
+  title,
+  description,
+  keywords = "amaranto, amaranto guatemala, amaranto sololá, superalimento, proteína vegetal, productos naturales, alimento ancestral, granos de amaranto, harina de amaranto, sin gluten, productos orgánicos guatemala",
+  ogImage = "/images/og-image-amaranto.jpg",
+  ogType = "website",
+  canonicalURL = Astro.url.href,
+  noindex = false,
+  structuredData
+} = Astro.props;
+
+// Datos estructurados por defecto para la organización
+const defaultStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Amaranto Guatemala",
+  "description": "Productores y distribuidores de amaranto de alta calidad del departamento de Sololá, Guatemala",
+  "url": Astro.site,
+  "logo": `${Astro.site}images/logo-amaranto.png`,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sololá",
+    "addressRegion": "Sololá",
+    "addressCountry": "GT"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": ["Spanish"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/amarantoguatemala",
+    "https://www.instagram.com/amarantoguatemala"
+  ]
+};
+
+// Datos estructurados de producto para la página de tienda
+const productStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Productos de Amaranto",
+  "description": "Catálogo de productos de amaranto natural de Sololá, Guatemala",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "name": "Amaranto en Grano Natural",
+        "description": "Granos de amaranto 100% natural cosechado en Sololá",
+        "offers": {
+          "@type": "Offer",
+          "price": "35.00",
+          "priceCurrency": "GTQ",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    }
+  ]
+};
+
+// Breadcrumbs estructurados
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": Astro.site
+    }
+  ]
+};
+
+const finalStructuredData = structuredData || defaultStructuredData;
+---
+
+<!-- Título y meta descripción -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Robots -->
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content="es_GT" />
+<meta property="og:site_name" content="Amaranto Guatemala" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Meta adicionales -->
+<meta name="author" content="Amaranto Guatemala" />
+<meta name="language" content="Spanish" />
+<meta name="geo.region" content="GT-SO" />
+<meta name="geo.placename" content="Sololá, Guatemala" />
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<!-- Manifest para PWA -->
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#2d5016" />
+
+<!-- Datos estructurados JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(finalStructuredData)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbStructuredData)} />
+
+<!-- Verificación de motores de búsqueda (agregar tus códigos cuando los tengas) -->
+<!-- <meta name="google-site-verification" content="tu-codigo-aqui" /> -->
+<!-- <meta name="msvalidate.01" content="tu-codigo-aqui" /> -->
+
+<!-- Preconnect para mejorar rendimiento -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://wa.me" />

@@ -1,0 +1,592 @@
+---
+// HeroSection.astro - Sección principal con animaciones y slider de imágenes
+---
+
+<section id="inicio" class="hero">
+  <div class="hero-background">
+    <!-- Slider de imágenes de fondo -->
+    <div class="image-slider">
+      <div class="slide active" data-bg="/images/amaranto-field-solola.jpg"></div>
+      <div class="slide" data-bg="/images/amaranto-grains.jpg"></div>
+      <div class="slide" data-bg="/images/amaranto-harvest.jpg"></div>
+      <div class="slide" data-bg="/images/solola-landscape.jpg"></div>
+    </div>
+    
+    <!-- Overlay para mejorar legibilidad -->
+    <div class="hero-overlay"></div>
+    
+    <!-- Partículas flotantes -->
+    <div class="floating-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+  </div>
+  
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="title-line animate-slide-up">Amaranto de</span>
+          <span class="title-line animate-slide-up" style="animation-delay: 0.2s;">
+            <span class="highlight">Sololá</span>
+          </span>
+          <span class="title-line animate-slide-up" style="animation-delay: 0.4s;">Guatemala</span>
+        </h1>
+        
+        <p class="hero-subtitle animate-fade-in" style="animation-delay: 0.6s;">
+          Descubre el poder nutricional del amaranto, un superalimento ancestral 
+          cultivado en las tierras fértiles del departamento de Sololá, Guatemala.
+        </p>
+        
+        <div class="hero-stats animate-fade-in" style="animation-delay: 0.8s;">
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Natural</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">16g</span>
+            <span class="stat-label">Proteína</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Gluten</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2000+</span>
+            <span class="stat-label">Años Historia</span>
+          </div>
+        </div>
+        
+        <div class="hero-buttons animate-fade-in" style="animation-delay: 1s;">
+          <a href="#productos" class="btn btn-primary">
+            Explorar Productos
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </a>
+          <a href="#amaranto" class="btn btn-secondary">
+            Conocer Más
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Tarjetas flotantes con información rápida -->
+      
+  
+  <!-- Indicador de scroll -->
+  <div class="scroll-indicator animate-bounce">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+  
+  .image-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .slide:nth-child(1) {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                      url('/images/amaranto-field-placeholder.jpg');
+    background-color: #55235d;
+  }
+  
+  .slide:nth-child(2) {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                      url('/images/amaranto-grains-placeholder.jpg');
+    background-color: #8b3c8a;
+  }
+  
+  .slide:nth-child(3) {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                      url('/images/amaranto-harvest-placeholder.jpg');
+    background-color: #50162f;
+  }
+  
+  .slide:nth-child(4) {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                      url('/images/solola-landscape-placeholder.jpg');
+    background-color: #961a60;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+      rgba(45, 80, 22, 0.7) 0%, 
+      rgba(139, 90, 60, 0.6) 100%);
+    z-index: -1;
+  }
+  
+  .floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .particle:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+  }
+  
+  .particle:nth-child(2) {
+    left: 20%;
+    top: 80%;
+    animation-delay: 1s;
+  }
+  
+  .particle:nth-child(3) {
+    left: 80%;
+    top: 30%;
+    animation-delay: 2s;
+  }
+  
+  .particle:nth-child(4) {
+    left: 70%;
+    top: 70%;
+    animation-delay: 3s;
+  }
+  
+  .particle:nth-child(5) {
+    left: 50%;
+    top: 10%;
+    animation-delay: 4s;
+  }
+  
+  .particle:nth-child(6) {
+    left: 90%;
+    top: 60%;
+    animation-delay: 5s;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-top: 70px;
+  }
+  
+  .hero-text {
+    text-align: center;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title-line {
+    display: block;
+    margin: 0.2rem 0;
+  }
+  
+  .highlight {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+  
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffd700;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #2d5016, #8b5a3c);
+    color: white;
+    box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+  }
+  
+  .btn-icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+  }
+  
+  .hero-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .info-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+    padding: 12px;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #2d5016;
+    stroke-width: 2;
+  }
+  
+  .info-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #ffd700;
+  }
+  
+  .info-card p {
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+  
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  
+  .scroll-indicator svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2;
+  }
+  
+  /* Animaciones */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(120deg); }
+    66% { transform: translateY(-10px) rotate(240deg); }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) translateX(-50%);
+    }
+    40% {
+      transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+      transform: translateY(-5px) translateX(-50%);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 500px;
+    }
+    
+    .hero-stats {
+      gap: 1rem;
+    }
+    
+    .stat-item {
+      padding: 0.8rem;
+      min-width: 80px;
+    }
+    
+    .stat-number {
+      font-size: 1.5rem;
+    }
+    
+    .hero-buttons {
+      gap: 1rem;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      font-size: 0.95rem;
+    }
+    
+    .hero-cards {
+      grid-template-columns: 1fr;
+      margin-top: 2.5rem;
+    }
+    
+    .info-card {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-stats {
+      gap: 0.5rem;
+    }
+    
+    .stat-item {
+      padding: 0.6rem;
+      min-width: 70px;
+    }
+    
+    .stat-number {
+      font-size: 1.3rem;
+    }
+    
+    .stat-label {
+      font-size: 0.8rem;
+    }
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+      max-width: 280px;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  // Slider de imágenes de fondo
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    
+    // Cambiar imagen cada 5 segundos
+    setInterval(nextSlide, 5000);
+    
+    // Smooth scroll para el indicador
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    scrollIndicator?.addEventListener('click', function() {
+      const nextSection = document.querySelector('#amaranto');
+      if (nextSection) {
+        nextSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+    
+    // Animación de entrada con Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+      entry.target.style.animationPlayState = 'running';
+      entry.target.classList.add('animate-visible');
+    }
+  });
+}, observerOptions);
+    
+    // Observar elementos animados
+    document.querySelectorAll('.animate-slide-up, .animate-fade-in, .animate-float')
+      .forEach(el => observer.observe(el));
+  });
+</script>

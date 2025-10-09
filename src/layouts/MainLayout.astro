@@ -1,0 +1,85 @@
+---
+import SEO from '../components/SEO.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const { 
+  title, 
+  description = "Amaranto Guatemala - Productos naturales de amaranto del departamento de Sololá. Granos, harinas y productos derivados de alta calidad, ricos en proteínas y sin gluten.",
+  keywords,
+  ogImage,
+  noindex = false
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Component -->
+  <SEO 
+    title={title}
+    description={description}
+    keywords={keywords}
+    ogImage={ogImage}
+    noindex={noindex}
+  />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <slot />
+  
+  <!-- Google Analytics (agregar tu código cuando tengas la cuenta) -->
+  <!-- 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</body>
+</html>

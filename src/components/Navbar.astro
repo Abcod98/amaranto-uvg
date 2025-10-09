@@ -1,0 +1,305 @@
+---
+// Navbar.astro - Componente de navegación responsiva
+---
+
+<header class="navbar">
+  <nav class="nav-container">
+    <div class="nav-brand">
+      <img src="/logo-amaranto.png" alt="Amaranto Guatemala" class="logo">
+      <span class="brand-text">Amaranto<span class="brand-accent"></span></span>
+    </div>
+    
+    <!-- Menu hamburguesa para móvil -->
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <!-- Menú de navegación -->
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#inicio" class="nav-link">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a href="#amaranto" class="nav-link">Sobre Amaranto</a>
+      </li>
+      <li class="nav-item">
+        <a href="#productos" class="nav-link">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a href="#solola" class="nav-link">Sololá</a>
+      </li>
+      <li class="nav-item">
+        <a href="#beneficios" class="nav-link">Beneficios</a>
+      </li>
+      <li class="nav-item">
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a href="#tienda" class="nav-link nav-cta">Tienda</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+  
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  
+  .brand-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #501637;
+  }
+  
+  .brand-accent {
+    color: #8b5a3c;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #38003d;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: linear-gradient(90deg, #2d5016, #8b5a3c);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-cta {
+    background: linear-gradient(135deg, #501644, #8b5a3c);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(77, 22, 80, 0.3);
+  }
+  
+  .nav-cta::after {
+    display: none;
+  }
+  
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 0 16px;
+    }
+    
+    .nav-toggle {
+      display: flex;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      width: 100%;
+      height: calc(100vh - 70px);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 2rem;
+      gap: 1.5rem;
+      transition: left 0.3s ease;
+    }
+    
+    .nav-menu.active {
+      left: 0;
+    }
+    
+    .nav-item {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .nav-link {
+      font-size: 18px;
+      padding: 15px 0;
+      display: block;
+      width: 100%;
+    }
+    
+    .nav-cta {
+      margin-top: 1rem;
+      display: inline-block;
+      width: auto;
+    }
+    
+    /* Animación del menú hamburguesa */
+    .nav-toggle.active .hamburger-line:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .nav-toggle.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .nav-toggle.active .hamburger-line:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-container {
+      height: 60px;
+    }
+    
+    .brand-text {
+      font-size: 20px;
+    }
+    
+    .logo {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .nav-menu {
+      top: 60px;
+      height: calc(100vh - 60px);
+    }
+  }
+</style>
+
+<script>
+  // Funcionalidad del menú móvil
+  document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.querySelector('.navbar');
+    
+    // Toggle del menú móvil
+    navToggle?.addEventListener('click', function() {
+      navToggle.classList.toggle('active');
+      navMenu?.classList.toggle('active');
+    });
+    
+    // Cerrar menú al hacer click en un enlace
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle?.classList.remove('active');
+        navMenu?.classList.remove('active');
+      });
+    });
+    
+    // Efecto de scroll en la navbar
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 50) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+    
+    // Smooth scrolling para los enlaces del menú
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href?.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            const offsetTop = targetElement.offsetTop - 70;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  });
+</script>
