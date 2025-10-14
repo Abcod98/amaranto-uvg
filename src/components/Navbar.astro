@@ -1,49 +1,201 @@
 ---
-// Navbar.astro - Componente de navegación responsiva
+// Navbar.astro - Componente de navegación final
 ---
 
-<header class="navbar">
-  <nav class="nav-container">
-    <div class="nav-brand">
-      <img src="/logo-amaranto.png" alt="Amaranto Guatemala" class="logo">
-      <span class="brand-text">Amaranto<span class="brand-accent"></span></span>
-    </div>
+<header class="navbar" role="banner">
+  <nav class="nav-container" aria-label="Navegación principal">
+    <!-- Brand -->
+    <a href="#inicio" class="nav-brand" aria-label="Amaranto Guatemala - Ir a inicio">
+      <div class="logo-circle">A</div>
+      <div class="brand-info">
+        <span class="brand-name">Amaranto</span>
+        <span class="brand-location">Sololá</span>
+      </div>
+    </a>
     
-    <!-- Menu hamburguesa para móvil -->
-    <button class="nav-toggle" aria-label="Abrir menú">
+    <!-- Desktop Menu -->
+    <ul class="nav-menu" role="menubar">
+      <li class="nav-item" role="none">
+        <a href="#inicio" class="nav-link" role="menuitem" data-section="inicio">
+          Inicio
+        </a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="#amaranto" class="nav-link" role="menuitem" data-section="amaranto">
+          Sobre Amaranto
+        </a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="#beneficios" class="nav-link" role="menuitem" data-section="beneficios">
+          Beneficios
+        </a>
+      </li>
+      <li class="nav-item" role="none">
+        <a href="#solola" class="nav-link" role="menuitem" data-section="solola">
+          Sololá
+        </a>
+      </li>
+      <li class="nav-item nav-item-cta" role="none">
+        <a href="#tienda" class="nav-link nav-cta" role="menuitem" data-section="tienda">
+          <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          Tienda
+        </a>
+      </li>
+      <li class="nav-item nav-item-contact" role="none">
+        <a 
+          href="https://wa.me/50212345678?text=Hola!%20Me%20interesa%20información%20sobre%20el%20amaranto" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="nav-link nav-whatsapp"
+          role="menuitem"
+        >
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span class="whatsapp-text">Contacto</span>
+        </a>
+      </li>
+    </ul>
+    
+    <!-- Mobile Menu Toggle -->
+    <button 
+      class="nav-toggle" 
+      aria-label="Abrir menú de navegación"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
-    
-    <!-- Menú de navegación -->
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="#inicio" class="nav-link">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a href="#amaranto" class="nav-link">Sobre Amaranto</a>
-      </li>
-      <li class="nav-item">
-        <a href="#productos" class="nav-link">Productos</a>
-      </li>
-      <li class="nav-item">
-        <a href="#solola" class="nav-link">Sololá</a>
-      </li>
-      <li class="nav-item">
-        <a href="#beneficios" class="nav-link">Beneficios</a>
-      </li>
-      <li class="nav-item">
-        <a href="#contacto" class="nav-link">Contacto</a>
-      </li>
-      <li class="nav-item">
-        <a href="#tienda" class="nav-link nav-cta">Tienda</a>
-      </li>
-    </ul>
   </nav>
+  
+  <!-- Progress bar -->
+  <div class="scroll-progress" role="progressbar" aria-label="Progreso de scroll" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </header>
 
+<!-- Overlay -->
+<div class="nav-overlay" aria-hidden="true"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="menu-header">
+    <h2>Navegación</h2>
+    <button class="close-btn" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="menu-nav">
+    <a href="#inicio" class="menu-item" data-section="inicio">
+      <div class="item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <span class="item-label">Inicio</span>
+      <svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+
+    <a href="#amaranto" class="menu-item" data-section="amaranto">
+      <div class="item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="10"/>
+          <circle cx="12" cy="12" r="4"/>
+          <line x1="21.17" y1="8" x2="12" y2="8"/>
+          <line x1="3.95" y1="6.06" x2="8.54" y2="14"/>
+          <line x1="10.88" y1="21.94" x2="15.46" y2="14"/>
+        </svg>
+      </div>
+      <span class="item-label">Sobre Amaranto</span>
+      <svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+
+    <a href="#beneficios" class="menu-item" data-section="beneficios">
+      <div class="item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <span class="item-label">Beneficios</span>
+      <svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+
+    <a href="#solola" class="menu-item" data-section="solola">
+      <div class="item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <span class="item-label">Sololá</span>
+      <svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+  </nav>
+
+  <div class="menu-actions">
+    <a href="#tienda" class="action-btn primary" data-section="tienda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <div>
+        <div class="action-title">Ver Tienda</div>
+        <div class="action-subtitle">Productos de amaranto</div>
+      </div>
+    </a>
+
+    <a 
+      href="https://wa.me/50212345678?text=Hola!%20Me%20interesa%20información%20sobre%20el%20amaranto"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="action-btn whatsapp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+      <div>
+        <div class="action-title">Contactar WhatsApp</div>
+        <div class="action-subtitle">Respuesta inmediata</div>
+      </div>
+    </a>
+  </div>
+</div>
+
 <style>
+  /* Variables CSS - Paleta Amaranto */
+  :root {
+    --nav-height: 70px;
+    --nav-height-compact: 60px;
+    --purple-dark: #6B2D5C;
+    --purple-medium: #8B4789;
+    --purple-wine: #4A1942;
+    --purple-light: #A855A3;
+    --fuchsia: #E879F9;
+    --purple-soft: #C084FC;
+    --violet: #A855F7;
+    --text-dark: #333;
+    --transition: 0.3s ease;
+  }
+  
+  /* Navbar */
   .navbar {
     position: fixed;
     top: 0;
@@ -51,248 +203,553 @@
     right: 0;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(107, 45, 92, 0.1);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
   }
   
   .navbar.scrolled {
     background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(107, 45, 92, 0.15);
+    border-bottom-color: rgba(107, 45, 92, 0.15);
+  }
+  
+  .navbar.scrolled .nav-container {
+    height: var(--nav-height-compact);
+  }
+  
+  .navbar.scrolled .logo-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  
+  .navbar.scrolled .brand-name {
+    font-size: 1.15rem;
   }
   
   .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1.5rem;
+    height: var(--nav-height);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 70px;
+    justify-content: space-between;
+    transition: height var(--transition);
   }
   
+  /* Brand */
   .nav-brand {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
   }
   
-  .logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-  }
-  
-  .brand-text {
-    font-size: 24px;
+  .logo-circle {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     font-weight: 700;
-    color: #501637;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 8px rgba(107, 45, 92, 0.2);
+    transition: all var(--transition);
   }
   
-  .brand-accent {
-    color: #8b5a3c;
+  .nav-brand:hover .logo-circle {
+    transform: rotate(-5deg) scale(1.05);
   }
   
+  .brand-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  
+  .brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--purple-dark);
+    transition: font-size var(--transition);
+  }
+  
+  .brand-location {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--purple-medium);
+    opacity: 0.9;
+  }
+  
+  /* Desktop Menu */
   .nav-menu {
     display: flex;
-    list-style: none;
+    align-items: center;
     gap: 2rem;
+    list-style: none;
     margin: 0;
     padding: 0;
   }
   
-  .nav-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 16px;
-    transition: color 0.3s ease;
+  .nav-item {
     position: relative;
   }
   
-  .nav-link:hover {
-    color: #38003d;
+  .nav-link {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
   }
   
-  .nav-link::after {
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--purple-dark);
+  }
+  
+  .nav-link.active::after {
     content: '';
     position: absolute;
-    width: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 2px;
-    bottom: -5px;
-    left: 50%;
-    background: linear-gradient(90deg, #2d5016, #8b5a3c);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-  
-  .nav-link:hover::after {
-    width: 100%;
+    background: linear-gradient(90deg, var(--purple-dark), var(--fuchsia));
+    border-radius: 2px;
   }
   
   .nav-cta {
-    background: linear-gradient(135deg, #501644, #8b5a3c);
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
     color: white !important;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    padding: 0.65rem 1.5rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: all var(--transition);
+    box-shadow: 0 2px 12px rgba(107, 45, 92, 0.25);
   }
   
   .nav-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(77, 22, 80, 0.3);
+    box-shadow: 0 6px 20px rgba(168, 85, 163, 0.3);
+    background: linear-gradient(135deg, var(--purple-wine), var(--purple-dark));
   }
   
   .nav-cta::after {
     display: none;
   }
   
+  .cta-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+  }
+  
+  .nav-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white !important;
+    padding: 0.65rem 1.25rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: all var(--transition);
+    box-shadow: 0 2px 12px rgba(37, 211, 102, 0.25);
+  }
+  
+  .nav-whatsapp:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  }
+  
+  .nav-whatsapp::after {
+    display: none;
+  }
+  
+  .whatsapp-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* Mobile Toggle */
   .nav-toggle {
     display: none;
-    flex-direction: column;
-    background: transparent;
+    background: none;
     border: none;
+    color: var(--text-dark);
     cursor: pointer;
-    padding: 5px;
+    padding: 0.5rem;
+    z-index: 1001;
+    position: relative;
   }
   
   .hamburger-line {
     width: 25px;
     height: 3px;
-    background: #333;
+    background: var(--text-dark);
     margin: 3px 0;
     transition: 0.3s;
+    display: block;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .nav-container {
-      padding: 0 16px;
+  .nav-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .nav-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  /* Progress Bar */
+  .scroll-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple-dark), var(--fuchsia), var(--violet));
+    transition: width 0.1s ease;
+    border-radius: 0 2px 2px 0;
+  }
+  
+  /* Overlay */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(74, 25, 66, 0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+    z-index: 998;
+  }
+  
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: min(400px, 90vw);
+    height: 100vh;
+    background: white;
+    box-shadow: 4px 0 30px rgba(107, 45, 92, 0.15);
+    z-index: 999;
+    transition: left var(--transition);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  .mobile-menu.open {
+    left: 0;
+  }
+  
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(107, 45, 92, 0.1);
+    background: linear-gradient(135deg, rgba(107, 45, 92, 0.05), rgba(232, 121, 249, 0.05));
+  }
+  
+  .menu-header h2 {
+    font-size: 1.25rem;
+    color: var(--purple-dark);
+    margin: 0;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .close-btn:hover {
+    background: rgba(107, 45, 92, 0.1);
+    color: var(--purple-dark);
+  }
+  
+  .close-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+  }
+  
+  .menu-nav {
+    padding: 1rem 0;
+    flex: 1;
+  }
+  
+  .menu-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(107, 45, 92, 0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    text-decoration: none;
+    color: var(--text-dark);
+    opacity: 0;
+    animation: slideInLeft 0.3s ease forwards;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.open .menu-item:nth-child(1) { animation-delay: 0.05s; }
+  .mobile-menu.open .menu-item:nth-child(2) { animation-delay: 0.1s; }
+  .mobile-menu.open .menu-item:nth-child(3) { animation-delay: 0.15s; }
+  .mobile-menu.open .menu-item:nth-child(4) { animation-delay: 0.2s; }
+  
+  .menu-item:hover {
+    background: rgba(107, 45, 92, 0.05);
+  }
+  
+  .menu-item.active {
+    background: linear-gradient(90deg, rgba(107, 45, 92, 0.1), transparent);
+    border-left: 4px solid var(--purple-dark);
+  }
+  
+  .item-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(107, 45, 92, 0.1), rgba(232, 121, 249, 0.1));
+    border-radius: 10px;
+    color: var(--purple-dark);
+    flex-shrink: 0;
+  }
+  
+  .item-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+  }
+  
+  .menu-item.active .item-icon {
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
+    color: white;
+  }
+  
+  .item-label {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+  
+  .item-arrow {
+    width: 18px;
+    height: 18px;
+    color: #999;
+    stroke-width: 2;
+    transition: transform 0.2s ease;
+  }
+  
+  .menu-item:hover .item-arrow {
+    transform: translateX(4px);
+  }
+  
+  .menu-actions {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid rgba(107, 45, 92, 0.1);
+  }
+  
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .action-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+  
+  .action-btn.primary {
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
+  }
+  
+  .action-btn.whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+  }
+  
+  .action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .action-title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  .action-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.9;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .nav-menu {
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 860px) {
+    .nav-menu {
+      display: none;
     }
     
     .nav-toggle {
-      display: flex;
-    }
-    
-    .nav-menu {
-      position: fixed;
-      top: 70px;
-      left: -100%;
-      width: 100%;
-      height: calc(100vh - 70px);
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(20px);
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding-top: 2rem;
-      gap: 1.5rem;
-      transition: left 0.3s ease;
-    }
-    
-    .nav-menu.active {
-      left: 0;
-    }
-    
-    .nav-item {
-      width: 100%;
-      text-align: center;
-    }
-    
-    .nav-link {
-      font-size: 18px;
-      padding: 15px 0;
       display: block;
-      width: 100%;
     }
     
-    .nav-cta {
-      margin-top: 1rem;
-      display: inline-block;
-      width: auto;
+    .nav-container {
+      height: 65px;
     }
     
-    /* Animación del menú hamburguesa */
-    .nav-toggle.active .hamburger-line:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
+    .navbar.scrolled .nav-container {
+      height: 55px;
     }
     
-    .nav-toggle.active .hamburger-line:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .nav-toggle.active .hamburger-line:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
+    .mobile-menu {
+      width: min(320px, 85vw);
     }
   }
   
   @media (max-width: 480px) {
-    .nav-container {
-      height: 60px;
+    .mobile-menu {
+      width: min(280px, 85vw);
     }
-    
-    .brand-text {
-      font-size: 20px;
-    }
-    
-    .logo {
-      width: 35px;
-      height: 35px;
-    }
-    
-    .nav-menu {
-      top: 60px;
-      height: calc(100vh - 60px);
+  }
+  
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 </style>
 
 <script>
-  // Funcionalidad del menú móvil
   document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector('.navbar') as HTMLElement;
+    const navToggle = document.querySelector('.nav-toggle') as HTMLButtonElement;
+    const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement;
+    const navOverlay = document.querySelector('.nav-overlay') as HTMLElement;
+    const closeBtn = document.querySelector('.close-btn') as HTMLButtonElement;
+    const navLinks = document.querySelectorAll('.nav-link') as NodeListOf<HTMLAnchorElement>;
+    const menuItems = document.querySelectorAll('.menu-item') as NodeListOf<HTMLAnchorElement>;
+    const actionBtns = document.querySelectorAll('.action-btn') as NodeListOf<HTMLAnchorElement>;
+    const scrollProgress = document.querySelector('.scroll-progress') as HTMLElement;
     
-    // Toggle del menú móvil
-    navToggle?.addEventListener('click', function() {
-      navToggle.classList.toggle('active');
-      navMenu?.classList.toggle('active');
-    });
-    
-    // Cerrar menú al hacer click en un enlace
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle?.classList.remove('active');
-        navMenu?.classList.remove('active');
-      });
-    });
-    
-    // Efecto de scroll en la navbar
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    function toggleMobileMenu() {
+      const isOpen = mobileMenu?.classList.toggle('open');
+      navToggle?.classList.toggle('active');
+      navOverlay?.classList.toggle('active');
+      navToggle?.setAttribute('aria-expanded', String(isOpen));
       
-      if (scrollTop > 50) {
-        navbar?.classList.add('scrolled');
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
       } else {
-        navbar?.classList.remove('scrolled');
+        document.body.style.overflow = '';
       }
-      
-      lastScrollTop = scrollTop;
-    });
+    }
     
-    // Smooth scrolling para los enlaces del menú
+    function closeMobileMenu() {
+      mobileMenu?.classList.remove('open');
+      navToggle?.classList.remove('active');
+      navOverlay?.classList.remove('active');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    
+    navToggle?.addEventListener('click', toggleMobileMenu);
+    closeBtn?.addEventListener('click', closeMobileMenu);
+    navOverlay?.addEventListener('click', closeMobileMenu);
+    
+    // Manejar clicks en links del menú desktop
     navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
         if (href?.startsWith('#')) {
           e.preventDefault();
           const targetId = href.substring(1);
           const targetElement = document.getElementById(targetId);
           if (targetElement) {
-            const offsetTop = targetElement.offsetTop - 70;
+            const navHeight = navbar?.offsetHeight || 70;
+            const offsetTop = targetElement.offsetTop - navHeight;
             window.scrollTo({
               top: offsetTop,
               behavior: 'smooth'
@@ -301,5 +758,101 @@
         }
       });
     });
+    
+    // Manejar clicks en items del menú móvil
+    menuItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        const href = item.getAttribute('href');
+        if (href?.startsWith('#')) {
+          e.preventDefault();
+          closeMobileMenu();
+          
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            const navHeight = navbar?.offsetHeight || 70;
+            const offsetTop = targetElement.offsetTop - navHeight;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+    
+    // Manejar clicks en botones de acción
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const href = btn.getAttribute('href');
+        if (href?.startsWith('#')) {
+          e.preventDefault();
+          closeMobileMenu();
+          
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            const navHeight = navbar?.offsetHeight || 70;
+            const offsetTop = targetElement.offsetTop - navHeight;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        } else {
+          closeMobileMenu();
+        }
+      });
+    });
+    
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu?.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+    
+    // Efecto de scroll
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 50) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+      
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (scrollTop / windowHeight) * 100;
+      if (scrollProgress) {
+        scrollProgress.style.width = `${scrolled}%`;
+        scrollProgress.setAttribute('aria-valuenow', String(Math.round(scrolled)));
+      }
+    });
+    
+    // Active link detection
+    const sections = document.querySelectorAll('section[id]');
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '-70px 0px -70% 0px'
+    };
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          
+          navLinks.forEach(link => link.classList.remove('active'));
+          const activeDesktopLink = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
+          activeDesktopLink?.classList.add('active');
+          
+          menuItems.forEach(item => item.classList.remove('active'));
+          const activeMobileItem = document.querySelector(`.menu-item[data-section="${sectionId}"]`);
+          activeMobileItem?.classList.add('active');
+        }
+      });
+    }, observerOptions);
+    
+    sections.forEach(section => sectionObserver.observe(section));
   });
 </script>
