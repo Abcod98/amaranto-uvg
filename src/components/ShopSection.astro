@@ -8,79 +8,47 @@ const WHATSAPP_NUMBER = "50212345678"; // Cambia esto por tu número real
 // Datos de productos (en el futuro esto puede venir de una base de datos o CMS)
 const products = [
   {
-    id: "amaranto-grano-natural",
-    name: "Amaranto en Grano Natural",
-    description: "Granos de amaranto 100% natural, cosechado directamente de los campos de Sololá. Perfecto para preparar atoles, agregar a ensaladas o hacer reventado.",
-    price: 35.00,
-    image: "/images/products/amaranto-grano.jpg",
-    weight: "500g",
+    id: "granola-gluten-free",
+    name: "Granola Gluten Free",
+    description: "Granola artesanal 100% libre de gluten elaborada con amaranto de Sololá, frutos secos y miel natural. Perfecta para desayunos saludables y nutritivos.",
+    price: 45.00,
+    image: "/images/products/granola-gluten-free.jpg",
+    weight: "350g",
     badge: "Más Vendido",
     whatsappNumber: WHATSAPP_NUMBER
   },
   {
-    id: "harina-amaranto",
-    name: "Harina de Amaranto Premium",
-    description: "Harina de amaranto finamente molida, ideal para panadería sin gluten, tortillas nutritivas y smoothies proteicos. Rica en calcio y hierro.",
-    price: 45.00,
-    image: "/images/products/harina-amaranto.jpg",
-    weight: "500g",
-    discount: 10,
+    id: "granola-avena-integral",
+    name: "Granola de Avena Integral",
+    description: "Combinación perfecta de avena integral, amaranto reventado, almendras y pasas. Rica en fibra y proteínas para energía duradera.",
+    price: 40.00,
+    image: "/images/products/granola-avena.jpg",
+    weight: "400g",
     whatsappNumber: WHATSAPP_NUMBER
   },
   {
-    id: "amaranto-reventado",
-    name: "Amaranto Reventado Artesanal",
-    description: "Amaranto reventado listo para consumir. Excelente para mezclar con miel, chocolate o yogurt. Snack saludable rico en proteínas.",
-    price: 40.00,
-    image: "/images/products/amaranto-reventado.jpg",
-    weight: "300g",
+    id: "barras-granola",
+    name: "Barras de Granola",
+    description: "Prácticas barras de granola con amaranto para llevar a donde quieras. Snack nutritivo ideal para tu día activo. Pack de 6 unidades.",
+    price: 35.00,
+    image: "/images/products/barras-granola.jpg",
+    weight: "6 x 30g",
     badge: "Nuevo",
     whatsappNumber: WHATSAPP_NUMBER
   }
 ];
 ---
 
-<section id="tienda" class="shop-section">
+<section id="tienda" class="shop-section" itemscope itemtype="https://schema.org/Store">
   <div class="container">
     <!-- Header de la sección -->
     <div class="section-header">
-      <span class="section-subtitle">Productos Selectos</span>
-      <h2 class="section-title">Nuestra Tienda de Amaranto</h2>
-      <p class="section-description">
-        Descubre nuestra selección de productos de amaranto de la más alta calidad, 
-        cultivados con amor en las tierras fértiles de Sololá, Guatemala.
+      <span class="section-subtitle">Productos Artesanales</span>
+      <h2 class="section-title" itemprop="name">Nuestra Línea de Granola</h2>
+      <p class="section-description" itemprop="description">
+        Granolas artesanales elaboradas con amaranto de Sololá, ingredientes naturales 
+        y todo el sabor de Guatemala. Nutrición y energía para tu día a día.
       </p>
-    </div>
-    
-    <!-- Filtros y búsqueda -->
-    <div class="shop-controls">
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">
-          Todos los Productos
-        </button>
-        <button class="filter-btn" data-filter="grano">
-          Granos
-        </button>
-        <button class="filter-btn" data-filter="harina">
-          Harinas
-        </button>
-        <button class="filter-btn" data-filter="procesado">
-          Procesados
-        </button>
-      </div>
-      
-      <div class="search-box">
-        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-        <input 
-          type="search" 
-          placeholder="Buscar productos..." 
-          class="search-input"
-          aria-label="Buscar productos"
-        />
-      </div>
     </div>
     
     <!-- Grid de productos -->
@@ -140,130 +108,89 @@ const products = [
 <style>
   .shop-section {
     padding: 100px 0;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #f8f4f9 100%);
     position: relative;
+  }
+  
+  .shop-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: radial-gradient(ellipse at top, rgba(232, 121, 249, 0.1), transparent);
+    pointer-events: none;
   }
   
   .section-header {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 4rem;
+    position: relative;
+    z-index: 1;
   }
   
   .section-subtitle {
     display: inline-block;
-    background: linear-gradient(135deg, #2d5016, #8b5a3c);
+    background: linear-gradient(135deg, #6B2D5C, #8B4789);
     color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 4px 15px rgba(107, 45, 92, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .section-subtitle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 45, 92, 0.4);
   }
   
   .section-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    color: #2d5016;
-    margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #6B2D5C, #A855A3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.2rem;
     line-height: 1.2;
+    letter-spacing: -0.5px;
   }
   
   .section-description {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.7;
-  }
-  
-  .shop-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-  }
-  
-  .filter-buttons {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-  
-  .filter-btn {
-    background: white;
-    border: 2px solid #e0e0e0;
-    color: #666;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .filter-btn:hover {
-    border-color: #2d5016;
-    color: #2d5016;
-  }
-  
-  .filter-btn.active {
-    background: linear-gradient(135deg, #2d5016, #8b5a3c);
-    color: white;
-    border-color: transparent;
-  }
-  
-  .search-box {
-    position: relative;
-    min-width: 280px;
-  }
-  
-  .search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    stroke: #999;
-    stroke-width: 2;
-    pointer-events: none;
-  }
-  
-  .search-input {
-    width: 100%;
-    padding: 12px 20px 12px 45px;
-    border: 2px solid #e0e0e0;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-  }
-  
-  .search-input:focus {
-    outline: none;
-    border-color: #2d5016;
+    font-size: 1.15rem;
+    color: #5a5a5a;
+    line-height: 1.8;
+    font-weight: 400;
   }
   
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
   }
   
   .shop-cta {
-    background: linear-gradient(135deg, #2d5016, #1a3510);
+    background: linear-gradient(135deg, #6B2D5C, #4A1942);
     border-radius: 30px;
-    padding: 3rem;
+    padding: 3.5rem;
     color: white;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 3.5rem;
     align-items: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 20px 60px rgba(107, 45, 92, 0.4);
   }
   
   .shop-cta::before {
@@ -271,10 +198,22 @@ const products = [
     position: absolute;
     top: -50%;
     right: -10%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(232, 121, 249, 0.2) 0%, transparent 70%);
     border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
   }
   
   .cta-content {
@@ -342,7 +281,7 @@ const products = [
   .feature-item svg {
     width: 24px;
     height: 24px;
-    stroke: #ffd700;
+    stroke: #E879F9;
     stroke-width: 2;
     flex-shrink: 0;
   }
@@ -368,20 +307,6 @@ const products = [
       margin-bottom: 2.5rem;
     }
     
-    .shop-controls {
-      flex-direction: column;
-      align-items: stretch;
-    }
-    
-    .filter-buttons {
-      justify-content: center;
-    }
-    
-    .search-box {
-      min-width: auto;
-      width: 100%;
-    }
-    
     .products-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -403,11 +328,6 @@ const products = [
   }
   
   @media (max-width: 480px) {
-    .filter-btn {
-      font-size: 0.85rem;
-      padding: 8px 16px;
-    }
-    
     .shop-cta {
       padding: 1.5rem;
     }
@@ -420,42 +340,11 @@ const products = [
 </style>
 
 <script>
-  // Funcionalidad de filtros
+  // Animación de aparición de productos con efecto stagger
   document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const searchInput = document.querySelector('.search-input') as HTMLInputElement;
-    
-    // Filtrado por categoría
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Remover clase active de todos los botones
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Agregar clase active al botón clickeado
-        this.classList.add('active');
-        
-        const filter = this.getAttribute('data-filter');
-        console.log('Filtro seleccionado:', filter);
-        
-        // Aquí puedes implementar la lógica de filtrado
-        // Por ahora solo muestra todos los productos
-      });
-    });
-    
-    // Búsqueda en tiempo real
-    if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        console.log('Buscando:', searchTerm);
-        
-        // Aquí puedes implementar la lógica de búsqueda
-        // Filtrar productos basados en el término de búsqueda
-      });
-    }
-    
-    // Animación de aparición de productos
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.15,
+      rootMargin: '0px 0px -80px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
@@ -464,20 +353,39 @@ const products = [
           const element = entry.target as HTMLElement;
           setTimeout(() => {
             element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-          }, index * 100);
+            element.style.transform = 'translateY(0) scale(1)';
+          }, index * 150);
           observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
     
-    // Observar tarjetas de productos
-    document.querySelectorAll('.product-card').forEach((card, index) => {
+    // Observar tarjetas de productos con animación inicial
+    document.querySelectorAll('.product-card').forEach((card) => {
       const element = card as HTMLElement;
       element.style.opacity = '0';
-      element.style.transform = 'translateY(30px)';
-      element.style.transition = 'all 0.5s ease';
+      element.style.transform = 'translateY(40px) scale(0.95)';
+      element.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
       observer.observe(card);
     });
+    
+    // Animación del header
+    const sectionHeader = document.querySelector('.section-header');
+    if (sectionHeader) {
+      const headerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      const element = sectionHeader as HTMLElement;
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(-30px)';
+      element.style.transition = 'all 0.8s ease';
+      headerObserver.observe(sectionHeader);
+    }
   });
 </script>
