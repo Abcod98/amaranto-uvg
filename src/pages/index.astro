@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.astro';
 import HeroSection from '../components/HeroSection.astro';
 import ShopSection from '../components/ShopSection.astro';
 import AmarantoInfoSection from '../components/AmarantoInfoSection.astro';
+import HistorySection from '../components/HistorySection.astro'
 ---
 
 <MainLayout 
@@ -17,15 +18,9 @@ import AmarantoInfoSection from '../components/AmarantoInfoSection.astro';
   
   <!-- Historia y beneficios nutricionales -->
   <AmarantoInfoSection />
-  
-  <!-- Sección Placeholder para futuras secciones -->
-  
-  <section id="solola" style="height: 100vh; background: #f0f2f5; display: flex; align-items: center; justify-content: center;">
-    <div style="text-align: center; color: #333;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #1a4c96;">Sololá y el Amaranto</h2>
-      <p style="font-size: 1.2rem; max-width: 600px;">Próximamente: La historia del cultivo de amaranto en el departamento de Sololá.</p>
-    </div>
-  </section>
+
+  <!-- Historia del amaranto -->
+   <HistorySection />
 
   <!-- Sección de Tienda -->
   <ShopSection />

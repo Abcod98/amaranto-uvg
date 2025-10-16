@@ -1,0 +1,982 @@
+---
+// HistorySection.astro - Historia del amaranto en Sololá, Guatemala
+---
+
+<section id="historia" class="history-section" itemscope itemtype="https://schema.org/Article">
+  <div class="container">
+    <!-- Header -->
+    <header class="section-header">
+      <span class="section-badge">Nuestra Historia</span>
+      <h2 class="section-title" itemprop="headline">
+        El Amaranto en Sololá, Guatemala
+      </h2>
+      <p class="section-intro" itemprop="description">
+        Un legado ancestral que se cultiva en las tierras altas de Guatemala, 
+        donde la tradición maya se encuentra con la agricultura sostenible moderna.
+      </p>
+    </header>
+
+    <!-- Timeline Interactiva -->
+    <div class="timeline-container">
+      <div class="timeline-line">
+        <div class="timeline-line-progress"></div>
+      </div>
+      
+      <!-- Período Precolombino -->
+      <article class="timeline-item" data-aos="fade-up" itemscope itemtype="https://schema.org/HistoricalEvent">
+        <div class="timeline-marker">
+          <span class="marker-icon">🌾</span>
+        </div>
+        <div class="timeline-content">
+          <time class="timeline-date" itemprop="startDate" datetime="1500">1500 a.C. - 1500 d.C.</time>
+          <h3 class="timeline-title" itemprop="name">Época Precolombina Maya</h3>
+          <p class="timeline-text" itemprop="description">
+            El amaranto era considerado un alimento sagrado por los mayas. 
+            Conocido como "kiwicha" en quechua y "huautli" en náhuatl, este grano 
+            formaba parte fundamental de ceremonias religiosas y la dieta diaria. 
+            Los antiguos pobladores de Sololá cultivaban amaranto en terrazas de 
+            cultivo aprovechando el clima templado de las tierras altas.
+          </p>
+          <div class="timeline-image">
+            <img src="/images/history/maya-amaranto.jpg" alt="Cultivo de amaranto en la época maya" loading="lazy" width="600" height="400">
+          </div>
+        </div>
+      </article>
+
+      <!-- Conquista Española -->
+      <article class="timeline-item" data-aos="fade-up" itemscope itemtype="https://schema.org/HistoricalEvent">
+        <div class="timeline-marker">
+          <span class="marker-icon">⚔️</span>
+        </div>
+        <div class="timeline-content">
+          <time class="timeline-date" itemprop="startDate" datetime="1524">1524 - 1800</time>
+          <h3 class="timeline-title" itemprop="name">Período Colonial</h3>
+          <p class="timeline-text" itemprop="description">
+            Con la llegada de los españoles, el cultivo de amaranto fue prohibido 
+            debido a su uso en ceremonias religiosas mayas. Sin embargo, las comunidades 
+            indígenas de Sololá preservaron el conocimiento ancestral cultivándolo 
+            en pequeñas parcelas familiares, transmitiendo las técnicas de generación 
+            en generación de forma clandestina.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Resistencia Cultural</span>
+            <span class="tag">Agricultura Familiar</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Siglo XX -->
+      <article class="timeline-item" data-aos="fade-up" itemscope itemtype="https://schema.org/HistoricalEvent">
+        <div class="timeline-marker">
+          <span class="marker-icon">🌱</span>
+        </div>
+        <div class="timeline-content">
+          <time class="timeline-date" itemprop="startDate" datetime="1970">1970 - 2000</time>
+          <h3 class="timeline-title" itemprop="name">Redescubrimiento Nutricional</h3>
+          <p class="timeline-text" itemprop="description">
+            La FAO y organizaciones internacionales reconocieron el valor nutricional 
+            excepcional del amaranto. En Sololá, las cooperativas agrícolas comenzaron 
+            programas para revitalizar el cultivo tradicional, reconectando con las 
+            prácticas ancestrales y mejorando las técnicas de producción.
+          </p>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span class="stat-number">16%</span>
+              <span class="stat-label">Proteína</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">8%</span>
+              <span class="stat-label">Lisina</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Sin Gluten</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Actualidad -->
+      <article class="timeline-item" data-aos="fade-up" itemscope itemtype="https://schema.org/HistoricalEvent">
+        <div class="timeline-marker">
+          <span class="marker-icon">🏔️</span>
+        </div>
+        <div class="timeline-content">
+          <time class="timeline-date" itemprop="startDate" datetime="2020">2020 - Presente</time>
+          <h3 class="timeline-title" itemprop="name">Sololá: Capital del Amaranto</h3>
+          <p class="timeline-text" itemprop="description">
+            Hoy, el departamento de Sololá es reconocido como uno de los principales 
+            productores de amaranto de alta calidad en Guatemala. Más de 200 familias 
+            agricultoras cultivan este superalimento en las fértiles tierras volcánicas, 
+            combinando técnicas ancestrales con prácticas agrícolas sostenibles modernas.
+          </p>
+          <div class="timeline-image">
+            <img src="/images/history/solola-modern.jpg" alt="Cultivo moderno de amaranto en Sololá" loading="lazy" width="600" height="400">
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Sección Interactiva: Sololá y su Geografía -->
+    <div class="geography-section" data-aos="fade-up">
+      <div class="geography-content">
+        <h3 class="geography-title">¿Por qué Sololá es Ideal para el Amaranto?</h3>
+        
+        <div class="geography-grid">
+          <div class="geo-card">
+            <div class="geo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h4>Altitud Perfecta</h4>
+            <p>Entre 2,000 y 3,000 metros sobre el nivel del mar, condiciones ideales para el amaranto.</p>
+          </div>
+
+          <div class="geo-card">
+            <div class="geo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <h4>Suelos Volcánicos</h4>
+            <p>Tierra fértil rica en minerales, resultado de la actividad volcánica histórica.</p>
+          </div>
+
+          <div class="geo-card">
+            <div class="geo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              </svg>
+            </div>
+            <h4>Clima Templado</h4>
+            <p>Temperatura promedio de 15-20°C, perfecto para el desarrollo óptimo del amaranto.</p>
+          </div>
+
+          <div class="geo-card">
+            <div class="geo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 16.2A4.5 4.5 0 0 0 17.5 8H15A7 7 0 1 0 4 14.9"/>
+                <path d="M8 16h.01M12 16h.01M16 16h.01"/>
+              </svg>
+            </div>
+            <h4>Lluvias Regulares</h4>
+            <p>Precipitación bien distribuida durante la temporada de crecimiento.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa de Ubicación -->
+      <div class="map-container" data-aos="fade-left">
+        <div class="map-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="map-icon">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <p class="map-label">Sololá, Guatemala</p>
+          <p class="map-coords">14.7667° N, 91.1833° W</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tradición y Cultura -->
+    <div class="culture-section" data-aos="fade-up">
+      <h3 class="culture-title">Tradición Viva</h3>
+      
+      <div class="culture-cards">
+        <article class="culture-card">
+          <div class="culture-icon">👨‍🌾</div>
+          <h4>Conocimiento Ancestral</h4>
+          <p>
+            Las familias de Sololá heredan técnicas de cultivo transmitidas durante 
+            generaciones, desde la selección de semillas hasta la cosecha manual.
+          </p>
+        </article>
+
+        <article class="culture-card">
+          <div class="culture-icon">🤝</div>
+          <h4>Cooperativas Comunitarias</h4>
+          <p>
+            Más de 15 cooperativas trabajan juntas para procesar, empacar y distribuir 
+            el amaranto, fortaleciendo la economía local.
+          </p>
+        </article>
+
+        <article class="culture-card">
+          <div class="culture-icon">🌍</div>
+          <h4>Agricultura Sostenible</h4>
+          <p>
+            Cultivo orgánico sin pesticidas, rotación de cultivos y prácticas 
+            respetuosas con el medio ambiente del lago Atitlán.
+          </p>
+        </article>
+
+        <article class="culture-card">
+          <div class="culture-icon">🎓</div>
+          <h4>Educación y Capacitación</h4>
+          <p>
+            Programas continuos para jóvenes agricultores, preservando la tradición 
+            mientras se adoptan innovaciones sostenibles.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="cta-box" data-aos="zoom-in">
+      <h3>Apoya la Tradición, Nutre tu Cuerpo</h3>
+      <p>Cada compra de amaranto apoya directamente a las familias agricultoras de Sololá</p>
+      <a href="#tienda" class="cta-button">
+        Explora Nuestros Productos
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .history-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #faf5ff 50%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative Background */
+  .history-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    background: radial-gradient(ellipse at top, rgba(232, 121, 249, 0.1), transparent);
+    pointer-events: none;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #E879F9, #A855F7);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(232, 121, 249, 0.3);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #4A1942;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .section-intro {
+    font-size: 1.2rem;
+    color: #6B2D5C;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Timeline */
+  .timeline-container {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto 5rem;
+    padding: 2rem 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: rgba(107, 45, 92, 0.3);
+    transform: translateX(-50%);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .timeline-line-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, #E879F9 0%, #A855F7 50%, #6B2D5C 100%);
+    border-radius: 2px;
+    transition: height 0.2s linear;
+    will-change: height;
+  }
+
+  .timeline-container {
+    --line-progress: 0%;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+  }
+
+  .timeline-item[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+    padding-left: 2rem;
+    margin-right: 5px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-right: auto;
+    padding-right: 2rem;
+    margin-left: 5px;
+    text-align: left;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #E879F9, #A855F7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 8px rgba(232, 121, 249, 0.2), 0 4px 20px rgba(168, 85, 247, 0.4);
+    z-index: 2;
+  }
+
+  .marker-icon {
+    font-size: 1.8rem;
+  }
+
+  .timeline-content {
+    width: calc(45% - 40px);
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(107, 45, 92, 0.1);
+    border: 2px solid rgba(232, 121, 249, 0.2);
+    transition: all 0.3s ease;
+    text-align: left;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(168, 85, 247, 0.2);
+    border-color: #E879F9;
+  }
+
+  .timeline-date {
+    display: inline-block;
+    background: linear-gradient(135deg, #C084FC, #A855F7);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6B2D5C;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-text {
+    color: #4A1942;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .timeline-image {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  .timeline-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .timeline-content:hover .timeline-image img {
+    transform: scale(1.05);
+  }
+
+  .timeline-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    background: rgba(232, 121, 249, 0.1);
+    color: #8B4789;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(232, 121, 249, 0.3);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .stat-box {
+    background: linear-gradient(135deg, rgba(232, 121, 249, 0.1), rgba(168, 85, 247, 0.1));
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(232, 121, 249, 0.3);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #8B4789;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: #6B2D5C;
+    font-weight: 600;
+  }
+
+  /* Geography Section */
+  .geography-section {
+    background: linear-gradient(135deg, #6B2D5C, #8B4789);
+    border-radius: 30px;
+    padding: 3rem;
+    color: white;
+    margin: 5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .geography-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(232, 121, 249, 0.3), transparent);
+    border-radius: 50%;
+  }
+
+  .geography-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .geography-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .geography-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .geo-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .geo-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-10px);
+  }
+
+  .geo-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #E879F9, #C084FC);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .geo-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: white;
+    stroke-width: 2;
+  }
+
+  .geo-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+
+  .geo-card p {
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  .map-container {
+    margin-top: 3rem;
+  }
+
+  .map-placeholder {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .map-icon {
+    width: 80px;
+    height: 80px;
+    stroke: #E879F9;
+    stroke-width: 2;
+    margin: 0 auto 1rem;
+  }
+
+  .map-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .map-coords {
+    opacity: 0.8;
+    font-size: 1rem;
+  }
+
+  /* Culture Section */
+  .culture-section {
+    margin: 5rem 0;
+  }
+
+  .culture-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4A1942;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .culture-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .culture-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(107, 45, 92, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .culture-card:hover {
+    transform: translateY(-10px);
+    border-color: #E879F9;
+    box-shadow: 0 15px 50px rgba(168, 85, 247, 0.2);
+  }
+
+  .culture-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .culture-card h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #6B2D5C;
+    margin-bottom: 1rem;
+  }
+
+  .culture-card p {
+    color: #4A1942;
+    line-height: 1.7;
+  }
+
+  /* CTA Box */
+  .cta-box {
+    background: linear-gradient(135deg, #4A1942, #6B2D5C);
+    border-radius: 30px;
+    padding: 3rem;
+    text-align: center;
+    color: white;
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(232, 121, 249, 0.2), transparent);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+  .cta-box h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #E879F9, #C084FC);
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(232, 121, 249, 0.4);
+  }
+
+  .cta-button svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .history-section {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .timeline-line {
+      left: 30px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+      width: calc(90% - 80px);
+      margin-left: 80px;
+      margin-right: 20px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+
+    .timeline-marker {
+      left: 30px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .marker-icon {
+      font-size: 1.5rem;
+    }
+
+    .timeline-tags {
+      justify-content: flex-start !important;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .geography-section {
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+
+    .geography-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .culture-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-box {
+      padding: 2rem;
+    }
+
+    .cta-box h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .section-intro {
+      font-size: 1rem;
+    }
+
+    .timeline-title {
+      font-size: 1.2rem;
+    }
+
+    .timeline-text {
+      font-size: 0.95rem;
+    }
+
+    .geography-title {
+      font-size: 1.5rem;
+    }
+
+    .culture-title {
+      font-size: 1.8rem;
+    }
+
+    .cta-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  // Simple AOS (Animate On Scroll) implementation
+  document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all timeline items and animated sections
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add touch-friendly hover effects for mobile
+    const cards = document.querySelectorAll('.timeline-content, .geo-card, .culture-card');
+    cards.forEach(card => {
+      card.addEventListener('touchstart', function() {
+        const element = this as HTMLElement;
+        element.style.transform = 'translateY(-5px)';
+      });
+      
+      card.addEventListener('touchend', function() {
+        const element = this as HTMLElement;
+        setTimeout(() => {
+          element.style.transform = '';
+        }, 200);
+      });
+    });
+
+    // Smooth scroll for CTA button
+    const ctaButton = document.querySelector('.cta-button');
+    ctaButton?.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href?.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const offset = target.offsetTop - 80;
+          window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+
+    // Add parallax effect to timeline line on scroll
+    const timelineLineProgress = document.querySelector('.timeline-line-progress') as HTMLElement;
+    const timelineContainer = document.querySelector('.timeline-container') as HTMLElement;
+
+    const updateTimelineProgress = () => {
+      if (!timelineLineProgress || !timelineContainer) return;
+      
+      const rect = timelineContainer.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const containerTop = rect.top;
+      const containerHeight = rect.height;
+      
+      // Start filling when timeline enters viewport
+      if (containerTop < windowHeight && containerTop + containerHeight > 0) {
+        // Calculate how far we've scrolled through the timeline
+        const scrolled = windowHeight - containerTop;
+        const total = containerHeight + (windowHeight * 0.5);
+        let percentage = (scrolled / total) * 100;
+        
+        // Clamp between 0 and 100
+        percentage = Math.max(0, Math.min(100, percentage));
+        
+        timelineLineProgress.style.height = `${percentage}%`;
+      } else if (containerTop >= windowHeight) {
+        // Before timeline is visible
+        timelineLineProgress.style.height = '0%';
+      } else {
+        // After timeline has passed
+        timelineLineProgress.style.height = '100%';
+      }
+    };
+
+    // Update on scroll with throttling
+    let scrollTimeout: number;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = window.requestAnimationFrame(updateTimelineProgress);
+    });
+    
+    // Initial update
+    updateTimelineProgress();
+
+    // Add loading animation for timeline images
+    const timelineImages = document.querySelectorAll('.timeline-image img');
+    timelineImages.forEach(img => {
+      img.addEventListener('load', function() {
+        const imageElement = this as HTMLElement;
+        imageElement.style.opacity = '0';
+        imageElement.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+          imageElement.style.opacity = '1';
+        }, 100);
+      });
+    });
+
+    // Interactive geo cards - add ripple effect on click
+    const geoCards = document.querySelectorAll('.geo-card');
+    geoCards.forEach(card => {
+      card.addEventListener('click', function(e: Event) {
+        const mouseEvent = e as MouseEvent;
+        const cardElement = this as HTMLElement;
+        const rect = cardElement.getBoundingClientRect();
+        
+        const ripple = document.createElement('div');
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(232, 121, 249, 0.5)';
+        ripple.style.width = ripple.style.height = '100px';
+        ripple.style.left = mouseEvent.clientX - rect.left - 50 + 'px';
+        ripple.style.top = mouseEvent.clientY - rect.top - 50 + 'px';
+        ripple.style.animation = 'ripple 0.6s ease-out';
+        ripple.style.pointerEvents = 'none';
+        
+        cardElement.style.position = 'relative';
+        cardElement.style.overflow = 'hidden';
+        cardElement.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Add CSS for ripple animation dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        from {
+          transform: scale(0);
+          opacity: 1;
+        }
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  });
+</script>
