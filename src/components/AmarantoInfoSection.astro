@@ -1,0 +1,1083 @@
+---
+// AmarantoInfoSection.astro - Sección informativa sobre el amaranto
+// Componente moderno, responsive con interactividad táctil y SEO optimizado
+---
+
+<section id="amaranto" class="amaranto-section" itemscope itemtype="https://schema.org/Article">
+  <div class="container">
+    <!-- Header de la sección -->
+    <header class="section-header">
+      <span class="section-badge" aria-label="Categoría">Conoce el Superalimento</span>
+      <h2 class="section-title" itemprop="headline">¿Qué es el Amaranto?</h2>
+      <p class="section-subtitle" itemprop="description">
+        Un regalo ancestral de los mayas, redescubierto para la nutrición moderna
+      </p>
+    </header>
+
+    <!-- Contenido principal con imagen -->
+    <article class="intro-content" itemprop="articleBody">
+      <figure class="intro-image" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <div class="image-wrapper">
+          <img 
+            src="/images/amaranto-plant.jpg" 
+            alt="Planta de amaranto en floración mostrando sus características hojas y flores púrpuras"
+            loading="lazy"
+            itemprop="url contentUrl"
+            width="600"
+            height="600"
+          />
+          <meta itemprop="description" content="Planta de amaranto cultivada en Sololá, Guatemala" />
+          <div class="image-badge" aria-label="Información adicional">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+            <span>Planta Ancestral</span>
+          </div>
+        </div>
+      </figure>
+
+      <div class="intro-text">
+        <h3 class="intro-title">El Grano de Oro de los Mayas</h3>
+        <p class="intro-description">
+          El amaranto es una planta milenaria que fue cultivada por las civilizaciones 
+          precolombinas hace más de 2,000 años. Los mayas y aztecas lo consideraban 
+          sagrado y lo utilizaban tanto en su alimentación diaria como en ceremonias 
+          religiosas.
+        </p>
+        <p class="intro-description">
+          Hoy en día, el amaranto es reconocido por la ONU y la NASA como un 
+          <strong>superalimento del futuro</strong> por su extraordinario perfil nutricional 
+          y su capacidad de adaptarse a diferentes condiciones climáticas.
+        </p>
+        
+        <ul class="intro-highlights" role="list">
+          <li class="highlight-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Reconocido por la ONU</span>
+          </li>
+          <li class="highlight-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>2000+ años de historia</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Tarjetas interactivas de características -->
+    <div class="features-grid" role="region" aria-label="Características del amaranto">
+      <article class="feature-card" data-feature="nutrition" itemscope itemtype="https://schema.org/NutritionInformation">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title" itemprop="name">Nutrición Completa</h3>
+        <p class="feature-description" itemprop="description">
+          Contiene todos los aminoácidos esenciales, siendo una proteína completa 
+          similar a la leche materna.
+        </p>
+        <button class="feature-expand" aria-label="Ver más información nutricional" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="feature-details" role="region" aria-label="Detalles nutricionales">
+          <ul>
+            <li><strong itemprop="proteinContent">16g de proteína</strong> por 100g</li>
+            <li><strong>Lisina:</strong> <span itemprop="description">2x más que el trigo</span></li>
+            <li><strong itemprop="calciumContent">Calcio:</strong> 3x más que la leche</li>
+            <li><strong itemprop="ironContent">Hierro:</strong> 5x más que las espinacas</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature-card" data-feature="versatility">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Versatilidad Culinaria</h3>
+        <p class="feature-description">
+          Se puede consumir en múltiples formas: grano cocido, reventado, 
+          harina, atoles y más.
+        </p>
+        <button class="feature-expand" aria-label="Ver usos culinarios" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="feature-details" role="region" aria-label="Usos culinarios">
+          <ul>
+            <li><strong>Grano cocido:</strong> ensaladas, sopas</li>
+            <li><strong>Reventado:</strong> snacks, barras energéticas</li>
+            <li><strong>Harina:</strong> pan, tortillas, smoothies</li>
+            <li><strong>Atoles:</strong> bebidas nutritivas</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature-card" data-feature="health">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Beneficios para la Salud</h3>
+        <p class="feature-description">
+          Ayuda a controlar el colesterol, fortalece el sistema inmune y 
+          mejora la digestión.
+        </p>
+        <button class="feature-expand" aria-label="Ver beneficios de salud" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="feature-details" role="region" aria-label="Beneficios para la salud">
+          <ul>
+            <li><strong>Reduce colesterol:</strong> grasas saludables</li>
+            <li><strong>Sin gluten:</strong> apto para celíacos</li>
+            <li><strong>Antioxidantes:</strong> previene envejecimiento</li>
+            <li><strong>Fibra:</strong> mejora la digestión</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature-card" data-feature="sustainability">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M17 8c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 5.25 7 13 7 13s7-7.75 7-13z"/>
+            <circle cx="10" cy="8" r="2"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Sostenible y Resistente</h3>
+        <p class="feature-description">
+          Crece con poca agua, resiste sequías y se adapta a diferentes climas, 
+          siendo ideal para el futuro.
+        </p>
+        <button class="feature-expand" aria-label="Ver características de sostenibilidad" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="feature-details" role="region" aria-label="Características de sostenibilidad">
+          <ul>
+            <li><strong>Bajo consumo de agua:</strong> resistente a sequías</li>
+            <li><strong>Adaptable:</strong> crece de 0 a 3000 msnm</li>
+            <li><strong>Rápido crecimiento:</strong> 3-4 meses</li>
+            <li><strong>Alto rendimiento:</strong> hasta 3 ton/hectárea</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <!-- Comparación nutricional interactiva -->
+    <aside class="comparison-section" role="complementary" aria-label="Comparación nutricional del amaranto">
+      <h3 class="comparison-title">Comparación Nutricional</h3>
+      <p class="comparison-subtitle">
+        Por cada 100g de alimento (desliza para ver más)
+      </p>
+      
+      <div class="comparison-slider" role="list" aria-label="Comparación de valores nutricionales" tabindex="0">
+        <div class="comparison-track">
+          <article class="comparison-item amaranto-highlight" role="listitem" itemscope itemtype="https://schema.org/NutritionInformation">
+            <header class="comparison-header">
+              <img src="/images/amaranto-icon.svg" alt="" aria-hidden="true" width="40" height="40" />
+              <h4 itemprop="name">Amaranto</h4>
+            </header>
+            <dl class="comparison-stats">
+              <div class="stat">
+                <dt class="stat-label">Proteína</dt>
+                <dd class="stat-value" itemprop="proteinContent">16g</dd>
+                <div class="stat-bar" style="width: 100%" role="progressbar" aria-valuenow="16" aria-valuemin="0" aria-valuemax="16" aria-label="16 gramos de proteína"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Calcio</dt>
+                <dd class="stat-value" itemprop="calciumContent">159mg</dd>
+                <div class="stat-bar" style="width: 100%" role="progressbar" aria-valuenow="159" aria-valuemin="0" aria-valuemax="159" aria-label="159 miligramos de calcio"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Hierro</dt>
+                <dd class="stat-value" itemprop="ironContent">7.6mg</dd>
+                <div class="stat-bar" style="width: 100%" role="progressbar" aria-valuenow="7.6" aria-valuemin="0" aria-valuemax="7.6" aria-label="7.6 miligramos de hierro"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Fibra</dt>
+                <dd class="stat-value" itemprop="fiberContent">6.7g</dd>
+                <div class="stat-bar" style="width: 100%" role="progressbar" aria-valuenow="6.7" aria-valuemin="0" aria-valuemax="6.7" aria-label="6.7 gramos de fibra"></div>
+              </div>
+            </dl>
+          </article>
+
+          <article class="comparison-item" role="listitem" itemscope itemtype="https://schema.org/NutritionInformation">
+            <header class="comparison-header">
+              <img src="/images/rice-icon.svg" alt="" aria-hidden="true" width="40" height="40" />
+              <h4 itemprop="name">Arroz</h4>
+            </header>
+            <dl class="comparison-stats">
+              <div class="stat">
+                <dt class="stat-label">Proteína</dt>
+                <dd class="stat-value" itemprop="proteinContent">7g</dd>
+                <div class="stat-bar" style="width: 44%" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="16" aria-label="7 gramos de proteína"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Calcio</dt>
+                <dd class="stat-value" itemprop="calciumContent">28mg</dd>
+                <div class="stat-bar" style="width: 18%" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="159" aria-label="28 miligramos de calcio"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Hierro</dt>
+                <dd class="stat-value" itemprop="ironContent">0.8mg</dd>
+                <div class="stat-bar" style="width: 11%" role="progressbar" aria-valuenow="0.8" aria-valuemin="0" aria-valuemax="7.6" aria-label="0.8 miligramos de hierro"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Fibra</dt>
+                <dd class="stat-value" itemprop="fiberContent">1.3g</dd>
+                <div class="stat-bar" style="width: 19%" role="progressbar" aria-valuenow="1.3" aria-valuemin="0" aria-valuemax="6.7" aria-label="1.3 gramos de fibra"></div>
+              </div>
+            </dl>
+          </article>
+
+          <article class="comparison-item" role="listitem" itemscope itemtype="https://schema.org/NutritionInformation">
+            <header class="comparison-header">
+              <img src="/images/quinoa-icon.svg" alt="" aria-hidden="true" width="40" height="40" />
+              <h4 itemprop="name">Quinoa</h4>
+            </header>
+            <dl class="comparison-stats">
+              <div class="stat">
+                <dt class="stat-label">Proteína</dt>
+                <dd class="stat-value" itemprop="proteinContent">14g</dd>
+                <div class="stat-bar" style="width: 88%" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="16" aria-label="14 gramos de proteína"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Calcio</dt>
+                <dd class="stat-value" itemprop="calciumContent">47mg</dd>
+                <div class="stat-bar" style="width: 30%" role="progressbar" aria-valuenow="47" aria-valuemin="0" aria-valuemax="159" aria-label="47 miligramos de calcio"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Hierro</dt>
+                <dd class="stat-value" itemprop="ironContent">4.6mg</dd>
+                <div class="stat-bar" style="width: 61%" role="progressbar" aria-valuenow="4.6" aria-valuemin="0" aria-valuemax="7.6" aria-label="4.6 miligramos de hierro"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Fibra</dt>
+                <dd class="stat-value" itemprop="fiberContent">7g</dd>
+                <div class="stat-bar" style="width: 104%" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="6.7" aria-label="7 gramos de fibra"></div>
+              </div>
+            </dl>
+          </article>
+
+          <article class="comparison-item" role="listitem" itemscope itemtype="https://schema.org/NutritionInformation">
+            <header class="comparison-header">
+              <img src="/images/wheat-icon.svg" alt="" aria-hidden="true" width="40" height="40" />
+              <h4 itemprop="name">Trigo</h4>
+            </header>
+            <dl class="comparison-stats">
+              <div class="stat">
+                <dt class="stat-label">Proteína</dt>
+                <dd class="stat-value" itemprop="proteinContent">13g</dd>
+                <div class="stat-bar" style="width: 81%" role="progressbar" aria-valuenow="13" aria-valuemin="0" aria-valuemax="16" aria-label="13 gramos de proteína"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Calcio</dt>
+                <dd class="stat-value" itemprop="calciumContent">34mg</dd>
+                <div class="stat-bar" style="width: 21%" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="159" aria-label="34 miligramos de calcio"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Hierro</dt>
+                <dd class="stat-value" itemprop="ironContent">3.6mg</dd>
+                <div class="stat-bar" style="width: 47%" role="progressbar" aria-valuenow="3.6" aria-valuemin="0" aria-valuemax="7.6" aria-label="3.6 miligramos de hierro"></div>
+              </div>
+              <div class="stat">
+                <dt class="stat-label">Fibra</dt>
+                <dd class="stat-value" itemprop="fiberContent">12g</dd>
+                <div class="stat-bar" style="width: 179%" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="6.7" aria-label="12 gramos de fibra"></div>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </aside>
+    <!-- CTA final -->
+    <aside class="section-cta" role="complementary" aria-label="Llamado a la acción">
+      <h3>¿Listo para probar el amaranto?</h3>
+      <p>Descubre nuestros productos naturales de alta calidad</p>
+      <a href="#tienda" class="cta-button" aria-label="Ir a la sección de tienda para ver productos">
+        Ver Productos
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </a>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .amaranto-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #6B2D5C, #8B4789);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: #4A1942;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Contenido introductorio */
+  .intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  .intro-image {
+    position: relative;
+  }
+
+  .image-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+
+  .image-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-badge svg {
+    width: 24px;
+    height: 24px;
+    stroke: #6B2D5C;
+    stroke-width: 2;
+  }
+
+  .image-badge span {
+    font-weight: 600;
+    color: #6B2D5C;
+  }
+
+  .intro-text {
+    padding: 2rem 2rem;
+  }
+
+  .intro-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4A1942;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .intro-description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-highlights {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #f3e8f7, #f0e5f5);
+    border-radius: 15px;
+    border-left: 4px solid #8B4789;
+  }
+
+  .highlight-item svg {
+    width: 20px;
+    height: 20px;
+    stroke: #6B2D5C;
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+
+  .highlight-item span {
+    font-weight: 600;
+    color: #4A1942;
+    font-size: 0.95rem;
+  }
+
+  /* Tarjetas de características */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #8B4789, #E879F9);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .feature-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #6B2D5C, #A855A3);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(107, 45, 92, 0.2);
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(232, 121, 249, 0.4);
+  }
+
+  .feature-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: white;
+    stroke-width: 2;
+  }
+
+  .feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A1942;
+    margin-bottom: 1rem;
+  }
+
+  .feature-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .feature-expand {
+    background: transparent;
+    border: none;
+    color: #8B4789;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .feature-expand:hover {
+    color: #E879F9;
+  }
+
+  .feature-expand:active {
+    transform: scale(0.95);
+  }
+
+  .feature-expand svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card.expanded .feature-expand svg {
+    transform: rotate(180deg);
+  }
+
+  .feature-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .feature-card.expanded .feature-details {
+    max-height: 300px;
+  }
+
+  .feature-details ul {
+    list-style: none;
+    padding: 1rem 0 0;
+    margin: 0;
+  }
+
+  .feature-details li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f0f2f5;
+  }
+
+  .feature-details li:last-child {
+    border-bottom: none;
+  }
+
+  /* Comparación nutricional */
+  .comparison-section {
+    background: linear-gradient(135deg, #4A1942, #6B2D5C);
+    border-radius: 30px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(107, 45, 92, 0.3);
+  }
+
+  .comparison-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .comparison-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+  }
+
+  .comparison-slider {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  .comparison-slider::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .comparison-slider::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  .comparison-slider::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+
+  .comparison-track {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .comparison-item {
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .comparison-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .amaranto-highlight {
+    background: linear-gradient(135deg, rgba(232, 121, 249, 0.25), rgba(168, 85, 163, 0.25));
+    border: 2px solid #E879F9;
+    box-shadow: 0 8px 25px rgba(232, 121, 249, 0.3);
+  }
+
+  .comparison-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .comparison-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .comparison-header h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .comparison-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .stat {
+    position: relative;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 4px;
+    font-weight: normal;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .stat-bar {
+    height: 8px;
+    background: linear-gradient(90deg, #E879F9, #C084FC);
+    border-radius: 10px;
+    transition: width 0.6s ease;
+    box-shadow: 0 2px 8px rgba(232, 121, 249, 0.4);
+  }
+
+  .comparison-item:not(.amaranto-highlight) .stat-bar {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+    box-shadow: none;
+  }
+
+  /* CTA final */
+  .section-cta {
+    text-align: center;
+    background: linear-gradient(135deg, #f3e8f7, #f0e5f5);
+    border-radius: 25px;
+    padding: 3rem 2rem;
+    border: 2px solid rgba(139, 71, 137, 0.1);
+  }
+
+  .section-cta h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4A1942;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-cta p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #6B2D5C, #8B4789);
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(107, 45, 92, 0.3);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(232, 121, 249, 0.5);
+    background: linear-gradient(135deg, #8B4789, #A855A3);
+  }
+
+  .cta-button svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .intro-content {
+      gap: 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .amaranto-section {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .intro-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .intro-highlights {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .comparison-item {
+      min-width: 250px;
+    }
+
+    .section-cta {
+      padding: 2rem 1.5rem;
+    }
+
+    .section-cta h3 {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .intro-title {
+      font-size: 1.6rem;
+    }
+
+    .intro-description {
+      font-size: 1rem;
+    }
+
+    .feature-card {
+      padding: 1.5rem;
+    }
+
+    .feature-title {
+      font-size: 1.2rem;
+    }
+
+    .comparison-title {
+      font-size: 1.6rem;
+    }
+
+    .cta-button {
+      width: 100%;
+      justify-content: center;
+      max-width: 300px;
+    }
+  }
+
+  /* Animaciones */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Expandir/contraer tarjetas de características
+    const featureCards = document.querySelectorAll('.feature-card');
+    
+    featureCards.forEach(card => {
+      const expandBtn = card.querySelector('.feature-expand');
+      
+      // Función para toggle del estado expandido
+      const toggleExpanded = (e?: Event) => {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        const isExpanded = card.classList.toggle('expanded');
+        if (expandBtn) {
+          expandBtn.setAttribute('aria-expanded', isExpanded.toString());
+        }
+      };
+      
+      // Click/Touch en el botón para todos los dispositivos
+      if (expandBtn) {
+        expandBtn.addEventListener('click', toggleExpanded);
+        expandBtn.addEventListener('touchend', function(e: Event) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleExpanded();
+        }, { passive: false });
+      }
+      
+      // Touch en toda la tarjeta para móviles (excepto en el botón)
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      
+      card.addEventListener('touchstart', function(e: Event) {
+        const touchEvent = e as TouchEvent;
+        if (touchEvent.touches && touchEvent.touches.length > 0) {
+          touchStartY = touchEvent.touches[0].clientY;
+          touchStartTime = Date.now();
+        }
+      }, { passive: true });
+      
+      card.addEventListener('touchend', function(e: Event) {
+        const touchEvent = e as TouchEvent;
+        const target = touchEvent.target as HTMLElement;
+        
+        // No hacer nada si se tocó el botón expand (ya se maneja arriba)
+        if (target.closest('.feature-expand')) {
+          return;
+        }
+        
+        if (touchEvent.changedTouches && touchEvent.changedTouches.length > 0) {
+          const touchEndY = touchEvent.changedTouches[0].clientY;
+          const touchEndTime = Date.now();
+          const swipeDistance = Math.abs(touchStartY - touchEndY);
+          const touchDuration = touchEndTime - touchStartTime;
+          
+          // Considerar como tap si:
+          // - El movimiento es mínimo (< 10px)
+          // - La duración es corta (< 500ms)
+          if (swipeDistance < 10 && touchDuration < 500) {
+            toggleExpanded();
+          }
+        }
+      }, { passive: true });
+    });
+    
+    // Animación de barras de comparación con Intersection Observer
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const animateStats = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bars = entry.target.querySelectorAll('.stat-bar');
+          bars.forEach((bar, index) => {
+            if (bar instanceof HTMLElement) {
+              setTimeout(() => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                  bar.style.width = width;
+                }, 50);
+              }, index * 100);
+            }
+          });
+        }
+      });
+    };
+    
+    const statsObserver = new IntersectionObserver(animateStats, observerOptions);
+    
+    document.querySelectorAll('.comparison-item').forEach(item => {
+      statsObserver.observe(item);
+    });
+    
+    // Scroll horizontal suave en la comparación (mejor experiencia táctil)
+    const comparisonSlider = document.querySelector('.comparison-slider');
+    let isDown = false;
+    let startX: number = 0;
+    let scrollLeft: number = 0;
+    
+    if (comparisonSlider) {
+      comparisonSlider.addEventListener('mousedown', (e: Event) => {
+        const mouseEvent = e as MouseEvent;
+        isDown = true;
+        comparisonSlider.classList.add('active');
+        startX = mouseEvent.pageX - (comparisonSlider as HTMLElement).offsetLeft;
+        scrollLeft = comparisonSlider.scrollLeft;
+      });
+      
+      comparisonSlider.addEventListener('mouseleave', () => {
+        isDown = false;
+        comparisonSlider.classList.remove('active');
+      });
+      
+      comparisonSlider.addEventListener('mouseup', () => {
+        isDown = false;
+        comparisonSlider.classList.remove('active');
+      });
+      
+      comparisonSlider.addEventListener('mousemove', (e: Event) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const mouseEvent = e as MouseEvent;
+        const x = mouseEvent.pageX - (comparisonSlider as HTMLElement).offsetLeft;
+        const walk = (x - startX) * 2;
+        comparisonSlider.scrollLeft = scrollLeft - walk;
+      });
+    }
+    
+    // Animación de entrada con Intersection Observer
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+          fadeInObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    // Observar elementos para animación de entrada
+    document.querySelectorAll('.feature-card, .comparison-section, .section-cta').forEach(el => {
+      fadeInObserver.observe(el);
+    });
+    
+    // Indicador visual de scroll en comparación
+    if (comparisonSlider) {
+      const updateScrollIndicator = () => {
+        const scrollPercentage = (comparisonSlider.scrollLeft / (comparisonSlider.scrollWidth - comparisonSlider.clientWidth)) * 100;
+        
+        if (scrollPercentage < 10) {
+          comparisonSlider.setAttribute('data-scroll-position', 'start');
+        } else if (scrollPercentage > 90) {
+          comparisonSlider.setAttribute('data-scroll-position', 'end');
+        } else {
+          comparisonSlider.setAttribute('data-scroll-position', 'middle');
+        }
+      };
+      
+      comparisonSlider.addEventListener('scroll', updateScrollIndicator);
+      updateScrollIndicator();
+    }
+    
+    // Efecto parallax suave en imagen (solo desktop)
+    if (window.innerWidth > 768) {
+      const introImage = document.querySelector('.intro-image img');
+      
+      window.addEventListener('scroll', () => {
+        if (introImage instanceof HTMLElement) {
+          const scrolled = window.pageYOffset;
+          const sectionTop = document.querySelector('#amaranto')?.getBoundingClientRect().top ?? 0;
+          
+          if (sectionTop < window.innerHeight && sectionTop > -window.innerHeight) {
+            const parallaxSpeed = 0.3;
+            introImage.style.transform = `scale(1.05) translateY(${scrolled * parallaxSpeed}px)`;
+          }
+        }
+      });
+    }
+  });
+</script>
