@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+openrouter:
+  api-key: ${OPENROUTER_API_KEY:}
+  model: ${OPENROUTER_MODEL:anthropic/claude-3-5-haiku}
+  max-tokens: ${OPENROUTER_MAX_TOKENS:400}
+
+logging:
+  level:
+    com.amaranto.chatbot: INFO

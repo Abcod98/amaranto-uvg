@@ -747,206 +747,39 @@
 </style>
 
 <script>
-  // Base de conocimientos del amaranto
-  const amarantoKnowledge = {
-    beneficios: {
-      keywords: ['beneficio', 'beneficios', 'propiedades', 'ventaja', 'ventajas', 'bueno', 'salud'],
-      response: `El amaranto es un superalimento con múltiples beneficios:
+  // En prod (CloudFront) /api/chat es el mismo origen. En local (astro dev en :4321),
+  // se apunta directo al Spring Boot de :8080.
+  const CHAT_API_URL = window.location.hostname === 'localhost'
+    ? 'http://localhost:8080/chat'
+    : '/api/chat';
+  const FALLBACK_ERROR_REPLY = 'Uy, no pude conectarme en este momento. Escribinos por WhatsApp o a ventas@amarantoguatemala.com y te ayudamos enseguida.';
 
-• **Alto contenido proteico**: 14-16% de proteína de alta calidad con todos los aminoácidos esenciales
-• **Rico en calcio**: Contiene hasta 3 veces más calcio que la leche
-• **Libre de gluten**: Perfecto para personas celíacas o con intolerancia
-• **Fuente de hierro**: Excelente para prevenir la anemia
-• **Alto en fibra**: Mejora la digestión y salud intestinal
-• **Contiene lisina**: Aminoácido esencial raro en cereales
+  // Historial de la conversación para dar contexto al backend (se trunca del lado del servidor igual).
+  const conversationHistory: { role: string; content: string }[] = [];
 
-¿Te gustaría saber más sobre algún beneficio específico?`
-    },
-    nutricional: {
-      keywords: ['nutricional', 'nutrición', 'proteína', 'proteinas', 'vitaminas', 'minerales', 'calorias', 'gluten'],
-      response: `**Información Nutricional del Amaranto (por 100g):**
+  async function getBotResponse(userMessage: string): Promise<string> {
+    try {
+      const res = await fetch(CHAT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage, history: conversationHistory })
+      });
 
-🔸 Calorías: 371 kcal
-🔸 Proteínas: 13.6g (alta calidad biológica)
-🔸 Carbohidratos: 65g
-🔸 Fibra: 7g
-🔸 Grasas: 7g (mayormente insaturadas)
-
-**Minerales destacados:**
-• Calcio: 159mg
-• Hierro: 7.6mg
-• Magnesio: 248mg
-• Fósforo: 557mg
-
-**Vitaminas:**
-• Vitamina C, E, y complejo B
-• Ácido fólico
-
-✅ **Sin gluten** - Apto para celíacos
-✅ Alto valor biológico proteico
-
-¿Necesitas más información nutricional específica?`
-    },
-    recetas: {
-      keywords: ['receta', 'recetas', 'preparar', 'preparación', 'cocinar', 'comer', 'consumir', 'usar', 'atole', 'alegria', 'alegrías', 'como se prepara', 'cómo se prepara'],
-      response: `¡Te comparto algunas formas deliciosas de preparar amaranto!
-
-**🥣 Atole de Amaranto:**
-- Hierve 1 taza de amaranto en 4 tazas de agua
-- Agrega canela y panela al gusto
-- Sirve caliente
-
-**🍪 Alegrías (dulce tradicional):**
-- Revienta el amaranto en comal caliente
-- Mezcla con miel de abeja o piloncillo derretido
-- Forma barras o bolitas
-
-**🥗 Ensalada:**
-- Cocina el amaranto 20 minutos
-- Mezcla con verduras frescas
-- Aliña con limón y aceite de oliva
-
-**🥤 Smoothie proteico:**
-- Amaranto reventado + plátano + leche vegetal
-- Licúa y disfruta
-
-¿Te gustaría la receta completa de alguna preparación?`
-    },
-    productos: {
-      keywords: ['producto', 'productos', 'comprar', 'vender', 'precio', 'costo', 'tienda', 'grano', 'harina'],
-      response: `Tenemos estos productos disponibles:
-
-📦 **Amaranto en Grano Natural** (500g)
-• 100% natural de Sololá
-• Perfecto para atoles y reventado
-• Precio: Q35.00
-
-📦 **Harina de Amaranto Premium** (500g)
-• Finamente molida
-• Ideal para panadería sin gluten
-• Precio: Q45.00
-
-📦 **Amaranto Reventado** (300g)
-• Listo para consumir
-• Perfecto con miel o yogurt
-• Precio: Q40.00
-
-🚚 Envíos a toda Guatemala
-💚 100% orgánico
-
-¿Te gustaría comprar por WhatsApp o necesitas más información?`
-    },
-    solola: {
-      keywords: ['sololá', 'solola', 'guatemala', 'cultivo', 'origen', 'producción', 'cosecha'],
-      response: `El amaranto de Sololá es especial por varias razones:
-
-🌄 **Clima ideal**: La altura y clima del altiplano guatemalteco (2,000-2,500 msnm) son perfectos para el cultivo
-
-🌱 **Tradición ancestral**: Se cultiva desde la época precolombina en esta región
-
-👨‍🌾 **Agricultores locales**: Apoyamos a familias productoras de Sololá
-
-🌾 **Suelo fértil**: La tierra volcánica aporta minerales únicos
-
-✅ **Calidad superior**: Las condiciones naturales resultan en granos más nutritivos
-
-Nuestro amaranto mantiene la tradición maya mientras apoya a las comunidades locales.
-
-¿Quieres saber más sobre el proceso de cultivo?`
-    },
-    gluten: {
-      keywords: ['gluten', 'celiaco', 'celiaquia', 'intolerancia'],
-      response: `✅ **El amaranto es 100% libre de gluten**
-
-Es una excelente alternativa para:
-• Personas con enfermedad celíaca
-• Intolerancia al gluten
-• Sensibilidad al gluten no celíaca
-• Dietas sin TACC
-
-**Ventajas adicionales:**
-🌟 Alto valor proteico (supera a muchos cereales)
-🌟 Fácil digestión
-🌟 Versátil en la cocina
-🌟 Sabor neutro y agradable
-
-Puedes usar la harina de amaranto como sustituto en:
-- Pan y repostería
-- Tortillas
-- Espesante para salsas
-- Rebozados
-
-¿Te gustaría recetas específicas sin gluten?`
-    },
-    contacto: {
-      keywords: ['contacto', 'contactar', 'whatsapp', 'telefono', 'teléfono', 'comprar', 'pedido'],
-      response: `📱 **Contáctanos directamente:**
-
-Puedes hacer tu pedido o consultas por:
-
-💬 **WhatsApp**: Es la forma más rápida
-Haz clic en el botón "Comprar" de cualquier producto o en el botón de WhatsApp en la página
-
-📍 **Ubicación**: Sololá, Guatemala
-
-⏰ **Horario**: Respondemos de lunes a sábado, 8:00 AM - 6:00 PM
-
-🚚 **Envíos**: A toda Guatemala
-
-¿Te gustaría que te conecte con WhatsApp ahora?`
-    }
-  };
-
-  // Función para analizar la pregunta y encontrar la mejor respuesta
-  function getBotResponse(userMessage: string): string {
-    const messageLower = userMessage.toLowerCase();
-    const words = messageLower.split(/\s+/);
-    
-    let bestMatch = null;
-    let highestScore = 0;
-    
-    // Buscar coincidencias en la base de conocimientos
-    for (const [category, data] of Object.entries(amarantoKnowledge)) {
-      let score = 0;
-      
-      // Contar coincidencias de keywords
-      for (const keyword of data.keywords) {
-        if (messageLower.includes(keyword)) {
-          score += 1;
-          
-          // Dar más peso a coincidencias exactas de palabras completas
-          if (words.includes(keyword)) {
-            score += 2;
-          }
-          
-          // Dar aún más peso si la keyword es más específica (más larga)
-          if (keyword.length > 6) {
-            score += 1;
-          }
-        }
+      if (!res.ok) {
+        return FALLBACK_ERROR_REPLY;
       }
-      
-      if (score > highestScore) {
-        highestScore = score;
-        bestMatch = data;
-      }
-    }
-    
-    // Si no hay coincidencia suficiente, usar respuesta por defecto
-    if (highestScore === 0) {
-      return `Gracias por tu pregunta. Puedo ayudarte con información sobre:
 
-• Beneficios y propiedades del amaranto
-• Información nutricional
-• Recetas y formas de preparación
-• Nuestros productos
-• Cultivo en Sololá
-• Contacto y compras
+      const data = await res.json();
+      const reply = data.reply as string;
 
-¿Sobre qué tema específico te gustaría saber más?`;
+      conversationHistory.push({ role: 'user', content: userMessage });
+      conversationHistory.push({ role: 'assistant', content: reply });
+
+      return reply;
+    } catch (err) {
+      console.error('Error llamando al chat backend', err);
+      return FALLBACK_ERROR_REPLY;
     }
-    
-    return bestMatch.response;
   }
 
   // Función para agregar un mensaje al chat
@@ -1035,12 +868,8 @@ Haz clic en el botón "Comprar" de cualquier producto o en el botón de WhatsApp
   // Función para simular respuesta del bot con delay
   async function sendBotResponse(userMessage: string) {
     showTypingIndicator();
-    
-    // Simular tiempo de "pensamiento" del bot
-    await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
-    
+    const response = await getBotResponse(userMessage);
     hideTypingIndicator();
-    const response = getBotResponse(userMessage);
     addMessage(response, false);
   }
 
